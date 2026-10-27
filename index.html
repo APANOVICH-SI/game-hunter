@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHunter — Топова комп'ютерна периферія</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+   
+</head>
+<body>
+
+    <header>
+        <div class="container nav">
+            <a href="#" class="logo"><i class="fa-solid fa-gamepad"></i> GameHunter</a>
+            <div class="menu">
+                <a href="#products">Товари</a>
+                <a href="#contact">Контакти</a>
+            </div>
+            <a href="viber://chat?number=%2B380673830128" class="btn btn-v"><i class="fa-brands fa-viber"></i> Viber</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Топова периферія для <span>Твого скілу</span></h1>
+            <p>Професійні геймерські мишки, механічні клавіатури та преміальний звук з доставкою по Україні.</p>
+            <a href="#products" class="btn btn-p">Дивитися каталог</a>
+        </div>
+    </section>
+
+    <section class="section" id="products">
+        <div class="container">
+            <h2 class="title">Наш <span>Каталог</span></h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="img-w"><img src="https://unsplash.com" alt="Миша"></div>
+                    <div class="info">
+                        <h3 class="p-title">Миша Hunter X1</h3>
+                        <p class="desc">Оптичний сенсор 26,000 DPI, вага 59г, перемикачі на 90 млн кліків.</p>
+                        <div class="meta"><span class="price">2 450 ₴</span><span class="status">В наявності</span></div>
+                        <div class="actions">
+                            <button onclick="buy('Миша Hunter X1')" class="btn btn-o">Купити</button>
+                            <a href="viber://chat?number=%2B380673830128" class="btn btn-v"><i class="fa-brands fa-viber"></i> Запитати</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-w"><img src="https://unsplash.com" alt="Клавіатура"></div>
+                    <div class="info">
+                        <h3 class="p-title">Клавіатура Apex 75</h3>
+                        <p class="desc">Формат 75%, змазані лінійні свічі, Hot-swap, RGB підсвітка.</p>
+                        <div class="meta"><span class="price">4 200 ₴</span><span class="status">В наявності</span></div>
+                        <div class="actions">
+                            <button onclick="buy('Клавіатура Apex 75')" class="btn btn-o">Купити</button>
+                            <a href="viber://chat?number=%2B380673830128" class="btn btn-v"><i class="fa-brands fa-viber"></i> Запитати</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-w"><img src="https://unsplash.com" alt="Навушники"></div>
+                    <div class="info">
+                        <h3 class="p-title">Навушники SoundPulse</h3>
+                        <p class="desc">Об'ємний звук 7.1, бездротове підключення 2.4 GHz без затримок.</p>
+                        <div class="meta"><span class="price">3 890 ₴</span><span class="status">В наявності</span></div>
+                        <div class="actions">
+                            <button onclick="buy('Навушники SoundPulse')" class="btn btn-o">Купити</button>
+                            <a href="viber://chat?number=%2B380673830128" class="btn btn-v"><i class="fa-brands fa-viber"></i> Запитати</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="title">Зробити <span>Заявку</span></h2>
+            <div class="form-box">
+                <form action="https://formspree.io" method="POST" id="rf">
+                    <div class="form-group">
+                        <label>Ваше Ім'я</label>
+                        <input type="text" name="name" class="control" placeholder="Введіть ім'я" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Номер телефону</label>
+                        <input type="tel" name="phone" class="control" placeholder="+380..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Що вас цікавить?</label>
+                        <select name="product" id="prodSelect" class="control"></select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
