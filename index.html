@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHunter — Топова комп'ютерна периферія</title>
+    <title>Game-Hunter — Топова комп'ютерна периферія</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
@@ -13,7 +13,7 @@
 
     <header>
         <div class="container nav">
-            <a href="#" class="logo"><i class="fa-solid fa-gamepad"></i> GameHunter</a>
+            <a href="#" class="logo"><i class="fa-solid fa-gamepad"></i> Game-Hunter</a>
             <div class="menu">
                 <a href="#products">Товари</a>
                 <a href="#contact">Контакти</a>
@@ -25,7 +25,7 @@
     <section class="hero">
         <div class="container">
             <h1>Топова периферія для <span>Твого скілу</span></h1>
-            <p>Професійні геймерські мишки, механічні клавіатури та преміальний звук з доставкою по Україні.</p>
+            <p>Професійні геймерські мишки, механічні клавіатури з магнітними перемикачами та преміальний звук з доставкою по Україні.</p>
             <a href="#products" class="btn btn-p">Дивитися каталог</a>
         </div>
     </section>
@@ -34,20 +34,18 @@
         <div class="container">
             <h2 class="title">Наш <span>Каталог</span></h2>
             <div class="grid">
-                
-                <div class="card">
-                    <div class="img-w"><img src="https://unsplash.com" alt="Миша"></div>
+                <div class="card" data-href="product-mouse.html" style="cursor: pointer;">
+                    <div class="img-w"><img src="images/RX3Ultra/18.jpg" alt="Мишки RS3 Ultra"></div>
                     <div class="info">
-                        <h3 class="p-title">Миша Hunter X1</h3>
-                        <p class="desc">Оптичний сенсор 26,000 DPI, вага 59г, перемикачі на 90 млн кліків.</p>
+                        <h3 class="p-title">Миша Attack Shark RS3 Ultra</h3>
+                        <p class="desc">Корпус з композитного вуглеволокна, топовий сенсор PAW 3955 MAX, 1-52000 DPI, вага 66±5г, перемикачі на 100 млн кліків</p>
                         <div class="meta"><span class="price">2 450 ₴</span><span class="status">В наявності</span></div>
                         <div class="actions">
-                            <button onclick="buy('Миша Hunter X1')" class="btn btn-o">Купити</button>
+                            <button onclick="event.stopPropagation();buy('Миша Hunter X1')" class="btn btn-o">Купити</button>
                             <a href="viber://chat?number=%2B380673830128" class="btn btn-v"><i class="fa-brands fa-viber"></i> Запитати</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
                 <div class="card">
                     <div class="img-w"><img src="https://unsplash.com" alt="Клавіатура"></div>
                     <div class="info">
@@ -99,6 +97,39 @@
             </div>
         </div>
     </section>
+   <!--- <script>
+    console.log("1. 👍 Файл script.js успішно підтягнувся браузером і почав виконуватися!");
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("2. 🕒 Подія DOMContentLoaded спрацювала. Сторінка повністю завантажилась.");
+
+    // Шукаємо всі блоки .card, які мають атрибут data-href
+    const cards = document.querySelectorAll('.card[data-href]');
+    
+    console.log(`3. 🔎 Знайдено карток із атрибутом data-href: ${cards.length}`);
+    
+    if (cards.length === 0) {
+        console.warn("⚠️ УВАГА: Скрипт не знайшов жодної картки! Перевірте, чи правильно написаний атрибут data-href в HTML.");
+    }
+
+    cards.forEach((card, index) => {
+        const url = card.getAttribute('data-href');
+        console.log(`   👉 Картка №${index + 1}: успішно прив'язано клік до URL: "${url}"`);
+
+        card.addEventListener('click', () => {
+            console.log(`4. 🖱️ Зафіксовано КЛІК по картці №${index + 1}! Намагаюся перейти на: ${url}`);
+            
+            if (url) {
+                window.location.href = url;
+            } else {
+                console.error("❌ Помилка: Клік відбувся, але URL порожній!");
+            }
+        });
+    });
+});
+    //-->
+
+    <script src="script.js"></script>
 </body>
 </html>
 
