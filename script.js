@@ -27,3 +27,76 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const thumbs = document.querySelectorAll('.thumb');
+
+// Функція перемикання слайдів стрілками
+function moveSlide(direction) {
+    let newIndex = currentSlideIndex + direction;
+    if (newIndex >= slides.length) newIndex = 0;
+    if (newIndex < 0) newIndex = slides.length - 1;
+    setSlide(newIndex);
+}
+
+// Функція встановлення конкретного слайда
+function setSlide(index) {
+    slides[currentSlideIndex].classList.remove('active-slide');
+    thumbs[currentSlideIndex].classList.remove('active-thumb');
+    
+    currentSlideIndex = index;
+    
+    slides[currentSlideIndex].classList.add('active-slide');
+    thumbs[currentSlideIndex].classList.add('active-thumb');
+    
+    // Поставити відео на паузу, якщо ми перемкнулися на картинку
+    const iframe = slides[index].querySelector('iframe');
+    if (!iframe) {
+        const activeIframe = document.querySelector('iframe');
+        if (activeIframe) {
+            const src = activeIframe.src;
+            activeIframe.src = src; // перезавантажує iframe, зупиняючи відео
+        }
+    }
+}
+
+// Ефект Лупи: Рух збільшеної картинки за мишкою
+function zoomImage(event) {
+    const slide = event.currentTarget;
+    const img = slide.querySelector('img');
+    if (!img) return;
+    
+    // Отримуємо координати мишки відносно контейнера слайда
+    const rect = slide.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    
+    // Переводимо у відсотки
+    const xPercent = (x / rect.width) * 100;
+    const yPercent = (y / rect.height) * 100;
+    
+    // Зміщуємо центр трансформації (звідки робиться зум)
+    img.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+}
+
+// Скидання зуму, коли мишка йде геть
+function resetZoom(event) {
+    const img = event.currentTarget.querySelector('img');
+    if (img) {
+        img.style.transformOrigin = 'center center';
+    }
+}
+
+function openTab(event, tabId) {
+    // 1. Приховуємо всі вкладки
+    const panels = document.querySelectorAll('.tab-panel');
+    panels.forEach(panel => panel.classList.remove('active'));
+
+    // 2. Робимо всі кнопки неактивними
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // 3. Показуємо поточну вкладку та активуємо кнопку
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+}

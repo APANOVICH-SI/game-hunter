@@ -3,14 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Миша Hunter X1 — GameHunter</title>
+    <title>Миша Attack Shark RS3 Ultra — Game-Hunter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <main class="container product-page-container">
+        <!-- Ліва колонка: Медіа-галерея (Ваш слайдер) -->
+        <div class="product-visuals">
+            <div class="product-gallery-wrapper">
+                <div class="main-display-container">
+                    <button class="nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+    
+                    <div class="gallery-slides">
+                        <div class="slide active-slide img-slide" onmousemove="zoomImage(event)" onmouseleave="resetZoom(event)">
+                            <img src="images/RX3Ultra/18.jpg" alt="Attack Shark RS3 Ultra - Вид 1">
+                        </div>
+                        <div class="slide img-slide" onmousemove="zoomImage(event)" onmouseleave="resetZoom(event)">
+                            <img src="images/RX3Ultra/19.jpg" alt="Attack Shark RS3 Ultra - Вид 2">
+                        </div>
+                        <div class="slide video-slide">
+                            <iframe src="https://youtube.com" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="thumbnail-container">
+                    <div class="thumb active-thumb" onclick="setSlide(0)"><img src="images/RX3Ultra/18.jpg"></div>
+                    <div class="thumb" onclick="setSlide(1)"><img src="images/RX3Ultra/19.jpg"></div>
+                    <div class="thumb video-thumb" onclick="setSlide(2)">
+                        <span class="play-icon">&#9658;</span>Відео
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Права колонка: Інфо-картка та замовлення -->
+        <div class="product-shop-card">
+            <span class="status-badge">В наявності</span>
+            <h1 class="product-main-title">Миша <span>Attack Shark RS3 Ultra</span></h1>
+            
+            <p class="product-short-pitch">
+                Надлегка кіберспортивна зброя із корпусом із композитного вуглеволокна. 
+                Серце миші — революційний сенсор PAW 3955 MAX.
+            </p>
+        
+            <div class="product-price-tier">
+                <del class="oldPrice">3 999 ₴</del>
+                <span class="actionPrice">2 955 ₴</span>
+                <span class="actionLabel">Акція -26%</span>
+            </div>
+        
+            <!-- ТЕХНІЧНІ ФІШКИ (ІКОНКИ) ПОРУЧ ІЗ ЦІНОЮ -->
+            <div class="tech-features-badges">
+                <div class="tech-badge" title="Частота опитування 8000 Гц у дротовому та бездротовому режимах">
+                    <span class="badge-icon">⚡</span>
+                    <div class="badge-info">
+                        <span class="badge-title">8K Hz</span>
+                        <span class="badge-desc">Polling Rate</span>
+                    </div>
+                </div>
+                <div class="tech-badge" title="Вага миші становить всього 66±5 грамів">
+                    <span class="badge-icon">🪶</span>
+                    <div class="badge-info">
+                        <span class="badge-title">66g</span>
+                        <span class="badge-desc">Ultra-light</span>
+                    </div>
+                </div>
+                <div class="tech-badge" title="Міцний та легкий корпус із композитного вуглеволокна">
+                    <span class="badge-icon">💎</span>
+                    <div class="badge-info">
+                        <span class="badge-title">Carbon</span>
+                        <span class="badge-desc">Fiber Body</span>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Кнопки дій -->
+            <div class="product-action-buttons">
+                <a href="#order-form" class="btn btn-p buy-now-btn">Оформити замовлення</a>
+                <a href="viber://chat?number=%2B380673830128" class="btn btn-v viber-chat-btn">
+                    <!-- SVG Іконка Viber -->
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;"><path d="M22.122 13.916c-.237-.624-.951-1.077-1.898-1.258-1.503-.288-3.053-.162-4.512.353-.335.12-.477.42-.515.753-.087.734-.694 1.253-1.42 1.23a10.024 10.024 0 01-5.187-2.316 10.023 10.023 0 01-2.316-5.187c-.024-.726.495-1.333 1.229-1.42.334-.038.633-.18.753-.515.515-1.459.641-3.009.353-4.512C8.423.42 7.97.106 7.346-.13 6.643-.398 5.767-.323 5.066.08a7.085 7.085 0 00-3.344 4.14C.913 7.327 1.83 11.233 4.453 14.805c3.279 4.463 8.351 7.422 13.882 7.962 1.157.113 2.327-.1 3.344-.733a7.085 7.085 0 002.822-3.69c.404-.701.479-1.577.21-2.28-.001 0-.001-.001-.089-.148z"/></svg> 
+                    Запитати у Viber
+                </a>
+            </div>
+        </div>
+    </main>
+   
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo">GameHunter</a>
+            <a href="index.html" class="logo">Game-Hunter</a>
             <nav>
                 <a href="index.html#catalog">Назад до каталогу</a>
             </nav>
@@ -20,9 +104,80 @@
 
     <section class="product-page-content">
         <div class="container product-detail-grid">
-            <div class="product-detail-image">
-                <img src="images/hunter-x1.jpg" alt="Миша Hunter X1">
+            <div class="product-gallery-wrapper">
+                <!-- Головне вікно відображення (Слайдер) -->
+                <div class="main-display-container">
+                    <!-- Стрілки навігації -->
+                    <button class="nav-btn prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="nav-btn next-btn" onclick="moveSlide(1)">&#10095;</button>
+            
+                    <!-- Слайди (Зображення та Відео) -->
+                    <div class="gallery-slides">
+                        <!-- Слайд 1 (Зум працює на картинках) -->
+                        <div class="slide active-slide img-slide" onmousemove="zoomImage(event)" onmouseleave="resetZoom(event)">
+                            <img src="images/RX3Ultra/2.jpg" alt="Attack Shark RS3 Ultra - Вид 1">
+                        </div>
+                        <!-- Слайд 2 -->
+                        <div class="slide img-slide" onmousemove="zoomImage(event)" onmouseleave="resetZoom(event)">
+                            <img src="images/RX3Ultra/6.jpg" alt="Attack Shark RS3 Ultra - Вид 2">
+                        </div>
+                        <!-- Слайд 3 -->
+                        <div class="slide img-slide" onmousemove="zoomImage(event)" onmouseleave="resetZoom(event)">
+                            <img src="images/RX3Ultra/13.jpg" alt="Attack Shark RS3 Ultra - Вид 3">
+                        </div>
+                        <!-- Слайд 4 -->
+                        <div class="slide img-slide" onmousemove="zoomImage(event)" onmouseleave="resetZoom(event)">
+                            <img src="images/RX3Ultra/18.jpg" alt="Attack Shark RS3 Ultra - Вид 4">
+                        </div>
+                        <!-- Слайд 5 (Відео в кінці) -->
+                        <div class="slide video-slide">
+                            <iframe src="images/RX3Ultra/RS3Uvideo.mp4" title="Video RS3 Ultra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Мініатюри (Тамбнейли) знизу -->
+                <div class="thumbnail-container">
+                    <div class="thumb active-thumb" onclick="setSlide(0)"><img src="images/RX3Ultra/2.jpg"></div>
+                    <div class="thumb" onclick="setSlide(1)"><img src="images/RX3Ultra/6.jpg"></div>
+                    <div class="thumb" onclick="setSlide(2)"><img src="images/RX3Ultra/13.jpg"></div>
+                    <div class="thumb" onclick="setSlide(3)"><img src="images/RX3Ultra/18.jpg"></div>
+                    <div class="thumb video-thumb" 
+                    onclick="setSlide(3)">
+                        <span class="play-icon">&#9658;</span>Відео
+                    </div>
+                </div>
             </div>
+            <div class="product-tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" onclick="openTab(event, 'tab-description')">Опис товару</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-specs')">Технічні характеристики</button>
+                </div>
+            
+                <div class="tabs-content">
+                    <!-- Контент: Опис -->
+                    <div id="tab-description" class="tab-panel active">
+                        <p><strong>Бездротова ігрова миша Attack Shark RS3 Ultra</strong> — це сучасна ультралегка миша для геймінгу, створена для користувачів, яким важливі точність, швидкий відгук та комфорт під час тривалого використання. Модель виділяється ефектним дизайном <strong>Carbon Fiber</strong>, продуманою ергономікою та потужною внутрішньою платформою для стабільної роботи в динамічних ігрових сценаріях.</p>
+                        <p>Миша оснащена флагманським сенсором <strong>PAW3955MAX</strong>, який забезпечує чутливість <strong>до 52000 DPI</strong>. Додатково модель отримала контролер <strong>Nordic 54L15</strong>, що відповідає за швидку обробку сигналів.</p>
+                    </div>
+            
+                    <!-- Контент: Характеристики -->
+                    <div id="tab-specs" class="tab-panel">
+                        <ul class="specs-list">
+                            <li><strong>Тип сенсора:</strong> PAW3955MAX</li>
+                            <li><strong>Максимальний DPI:</strong> до 52000</li>
+                            <li><strong>Частота опитування:</strong> до 8000 Гц (Wired/Wireless)</li>
+                            <li><strong>Контролер:</strong> Nordic 54L15</li>
+                            <li><strong>Матеріал корпусу:</strong> Carbon Fiber Composites</li>
+                            <li><strong>Перемикачі:</strong> Omron Optical (до 100 млн натискань)</li>
+                            <li><strong>Вага:</strong> 66 ± 5 г</li>
+                            <li><strong>Розміри:</strong> 125.7 × 63 × 39.7 мм</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
             <div class="product-detail-info">
                 <span class="category">Миша</span>
                 <h1>Миша Hunter X1</h1>
@@ -34,14 +189,46 @@
                     Надлегка кіберспортивна зброя із корпусом із композитного вуглеволокна. 
 Серце миші — революційний сенсор PAW 3955 MAX із феноменальним розширенням від 1 до 52 000 DPI для абсолютного контролю над кожним рухом. 
 Невагомий та міцний корпус вагою всього 66±5 грамів гарантує блискавичну реакцію, а преміальні перемикачі на 100 мільйонів кліків забезпечать тактильну досконалість та вічну надійність у найзапекліших батлах..
+
+<h3>Опис</h3>
+
+<p><strong>Бездротова ігрова миша Attack Shark RS3 Ultra / Три режими підключення / PAW3955MAX / 52000 DPI / Carbon Fiber</strong> — це сучасна ультралегка миша для геймінгу, створена для користувачів, яким важливі точність, швидкий відгук та комфорт під час тривалого використання. Модель виділяється ефектним дизайном <strong>Carbon Fiber</strong>, продуманою ергономікою та потужною внутрішньою платформою для стабільної роботи в динамічних ігрових сценаріях.</p>
+
+<p>Миша оснащена флагманським сенсором <strong>PAW3955MAX</strong>, який забезпечує чутливість <strong>до 52000 DPI</strong>, високу точність позиціонування та стабільне відстеження рухів. Додатково модель отримала контролер <strong>Nordic 54L15</strong>, що відповідає за швидку обробку сигналів та стабільну роботу як у дротовому, так і в бездротовому режимі.</p>
+
+<p><strong>Attack Shark RS3 Ultra</strong> підтримує <strong>три режими підключення: 2.4G, Bluetooth та USB</strong>. Завдяки цьому мишу зручно використовувати як для ігор, так і для повсякденної роботи з різними пристроями. Частота опитування <strong>до 8000 Гц</strong> у дротовому та бездротовому режимах забезпечує мінімальну затримку та плавне керування.</p>
+
+<p>Вага миші становить близько <strong>66 ± 5 г</strong>, що робить її хорошим вибором для шутерів, змагальних дисциплін та довгих ігрових сесій. Основні кнопки оснащені <strong>оптичними перемикачами Omron</strong> з ресурсом <strong>до 100 мільйонів натискань</strong>, а колесо прокручування побудоване на <strong>енкодері TTC Gold</strong>, відомому своїм чітким та приємним відгуком.</p>
+
+<p>Додатковими перевагами моделі є <strong>регульований LOD на 5 рівнів</strong>, програмне налаштування через <strong>web & software control</strong>, а також міцний корпус із <strong>carbon fiber composites</strong>, що поєднує оригінальний зовнішній вигляд та надійну конструкцію.</p>
+
+
                 </p>
                 <div class="specs">
-                    <h3>Технічні характеристики:</h3>
+                    <h3>Характеристики:</h3>
                     <ul>
-                        <li><strong>Сенсор:</strong> Оптичний (26 000 DPI)</li>
-                        <li><strong>Вага:</strong> 59 грамів</li>
-                        <li><strong>Перемикачі:</strong> Оптико-механічні (90 млн кліків)</li>
-                        <li><strong>Підключення:</strong> Дротове/Бездротове</li>
+                        <li><strong>Тип:</strong> ігрова бездротова миша</li>
+                        <li><strong>Модель:</strong> Attack Shark RS3 Ultra</li>
+                        <li><strong>Колір:</strong> Carbon Fiber</li>
+                        <li><strong>Тип підключення:</strong> комбіноване</li>
+                        <li><strong>Режими підключення:</strong> 2.4G / Bluetooth / USB</li>
+                        <li><strong>Сенсор:</strong> PAW3955MAX</li>
+                        <li><strong>Максимальний DPI:</strong> до 52000</li>
+                        <li><strong>Частота опитування:</strong> до 8000 Гц</li>
+                        <li><strong>Режим polling rate:</strong> wired / wireless dual 8000Hz</li>
+                        <li><strong>Контролер:</strong> Nordic 54L15</li>
+                        <li><strong>Матеріал корпусу:</strong> Carbon Fiber Composites</li>
+                        <li><strong>Перемикачі:</strong> Omron Optical Microswitches</li>
+                        <li><strong>Ресурс перемикачів:</strong> до 100 млн натискань</li>
+                        <li><strong>Енкодер:</strong> TTC Gold Scroll Wheel Encoder</li>
+                        <li><strong>LOD:</strong> 5 рівнів</li>
+                        <li><strong>Швидкість сканування:</strong> 20000 FPS Static Scan Rate</li>
+                        <li><strong>Форма:</strong> ергономічна</li>
+                        <li><strong>Керування:</strong> Web & Software Control</li>
+                        <li><strong>Вага:</strong> 66 ± 5 г</li>
+                        <li><strong>Розміри:</strong> 125.7 × 63 × 39.7 мм</li>
+                        <li><strong>Призначення:</strong> геймінг, робота, повсякденне використання</li>
+                        <li><strong>Особливості:</strong> ультралегка вага, флагманський сенсор, три режими підключення, 8K polling rate, карбоновий дизайн, оптичні перемикачі Omron</li>
                     </ul>
                 </div>
                 <a href="#order" class="btn buy-now-btn">Оформити замовлення</a>
@@ -71,6 +258,6 @@
             <p>&copy; 2026 Game-Hunter. Всі права захищені.</p>
         </div>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
